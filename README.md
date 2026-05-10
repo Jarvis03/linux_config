@@ -5,6 +5,7 @@ Personal Linux dotfiles managed in git.
 ## Structure
 
 - `wezterm/wezterm.lua`: source of truth for WezTerm config
+- `wezterm/README.md`: WezTerm theme, tab bar, and shortcut notes
 - `git/`: reserved for git-related config files
 - `rime/README.md`: Rime 小鹤双拼安装和配置记录
 - `shell/zshrc`: source-controlled zsh bootstrap with `starship`
