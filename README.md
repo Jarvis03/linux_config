@@ -6,12 +6,14 @@ Personal Linux dotfiles managed in git.
 
 - `wezterm/wezterm.lua`: source of truth for WezTerm config
 - `git/`: reserved for git-related config files
-- `shell/`: reserved for shell-related config files
+- `shell/zshrc`: source-controlled zsh bootstrap with `starship`
+- `shell/README.md`: shell setup notes
 - `ssh/README.md`: GitHub SSH key setup notes
 
 ## Active links
 
 - `~/.wezterm.lua` loads `work/linux_config/wezterm/wezterm.lua`
+- `~/.zshrc` should source `work/linux_config/shell/zshrc`
 
 ## Notes
 

@@ -1,0 +1,5 @@
+# Source-controlled zsh bootstrap for this machine.
+
+export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(starship init zsh)"
