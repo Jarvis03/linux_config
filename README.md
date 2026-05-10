@@ -6,6 +6,7 @@ Personal Linux dotfiles managed in git.
 
 - `wezterm/wezterm.lua`: source of truth for WezTerm config
 - `git/`: reserved for git-related config files
+- `rime/README.md`: Rime 小鹤双拼安装和配置记录
 - `shell/zshrc`: source-controlled zsh bootstrap with `starship`
 - `shell/README.md`: shell setup notes
 - `ssh/README.md`: GitHub SSH key setup notes
