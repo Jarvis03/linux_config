@@ -31,10 +31,6 @@ wezterm.on("cycle-theme", function(window, _pane)
   window:set_config_overrides(overrides)
 end)
 
-wezterm.on("update-status", function(window, _pane)
-  window:set_right_status(current_theme(window))
-end)
-
 config.automatically_reload_config = true
 config.status_update_interval = 1000
 
@@ -58,8 +54,9 @@ config.integrated_title_button_alignment = "Right"
 config.use_fancy_tab_bar = true
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = false
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.tab_max_width = 32
+config.canonicalize_pasted_newlines = "CarriageReturnAndLineFeed"
 config.window_frame = {
   font = wezterm.font({ family = "DejaVu Sans", weight = "Bold" }),
   font_size = 11.0,
@@ -93,6 +90,14 @@ config.keys = {
   { key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") },
   { key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
   { key = "r", mods = "LEADER", action = wezterm.action.ReloadConfiguration },
+}
+
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = "Right" } },
+    mods = "NONE",
+    action = act.CopyTo("Clipboard"),
+  },
 }
 
 config.window_padding = {

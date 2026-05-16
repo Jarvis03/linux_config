@@ -1,6 +1,6 @@
 # Source-controlled zsh bootstrap for this machine.
 
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 if command -v dircolors >/dev/null 2>&1; then
   eval "$(dircolors -b)"
@@ -11,3 +11,16 @@ alias ll='ls -lah --color=auto'
 alias la='ls -A --color=auto'
 
 eval "$(starship init zsh)"
+
+for plugin in \
+  /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+  /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+  "$HOME/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
+  "$HOME/.local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+do
+  if [ -r "$plugin" ]; then
+    source "$plugin"
+  fi
+done
