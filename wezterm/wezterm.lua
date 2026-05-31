@@ -35,6 +35,8 @@ config.automatically_reload_config = true
 config.status_update_interval = 1000
 
 config.default_prog = { "/usr/bin/zsh", "-l" }
+config.use_ime = true
+config.ime_preedit_rendering = "System"
 
 config.font = wezterm.font_with_fallback({
   "DejaVu Sans Mono",
@@ -47,13 +49,13 @@ config.line_height = 1.1
 config.color_scheme = "Tokyo Night"
 config.window_background_opacity = 1.0
 config.text_background_opacity = 1.0
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "RESIZE"
 config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 config.integrated_title_button_style = "Gnome"
 config.integrated_title_button_alignment = "Right"
 config.use_fancy_tab_bar = true
 config.enable_tab_bar = true
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.tab_max_width = 32
 config.canonicalize_pasted_newlines = "CarriageReturnAndLineFeed"

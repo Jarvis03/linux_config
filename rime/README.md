@@ -42,25 +42,46 @@ ibus restart
 
 ## 用户配置
 
+仓库内维护的配置文件：
+
+```text
+~/work/linux_config/rime/default.custom.yaml
+~/work/linux_config/rime/double_pinyin_flypy.custom.yaml
+~/work/linux_config/rime/ibus_rime.custom.yaml
+```
+
 创建 Rime 用户配置目录：
 
 ```bash
 mkdir -p ~/.config/ibus/rime
 ```
 
-新建文件 `~/.config/ibus/rime/default.custom.yaml`：
+将仓库中的 `default.custom.yaml` 同步到 `~/.config/ibus/rime/default.custom.yaml`：
 
 ```yaml
 patch:
   schema_list:
     - schema: double_pinyin_flypy
+  "style/horizontal": true
 ```
 
-这个配置的作用是把 `Rime` 的方案列表设置为小鹤双拼。
+这个配置的作用：
+
+- 把 `Rime` 的方案列表设置为小鹤双拼
+
+将仓库中的 `ibus_rime.custom.yaml` 同步到 `~/.config/ibus/rime/ibus_rime.custom.yaml`：
+
+```yaml
+patch:
+  "style/horizontal": true
+```
+
+这个配置把 IBus 候选词列表设置为横向显示
 
 ## 默认使用简体
 
-小鹤方案本身带有 `simplification` 开关。为了让它默认使用简体，新增文件
+小鹤方案本身带有 `simplification` 开关。为了让它默认使用简体，将仓库中的
+`double_pinyin_flypy.custom.yaml` 同步到
 `~/.config/ibus/rime/double_pinyin_flypy.custom.yaml`：
 
 ```yaml
@@ -75,9 +96,13 @@ patch:
 
 ## 重新加载
 
-写完配置后重启 `IBus`：
+写完配置后把文件复制到用户目录并重启 `IBus`：
 
 ```bash
+mkdir -p ~/.config/ibus/rime
+cp ~/work/linux_config/rime/default.custom.yaml ~/.config/ibus/rime/default.custom.yaml
+cp ~/work/linux_config/rime/double_pinyin_flypy.custom.yaml ~/.config/ibus/rime/double_pinyin_flypy.custom.yaml
+cp ~/work/linux_config/rime/ibus_rime.custom.yaml ~/.config/ibus/rime/ibus_rime.custom.yaml
 ibus restart
 ```
 
@@ -89,6 +114,8 @@ ibus restart
   `/home/guo/.config/ibus/rime/default.custom.yaml`
 - `Rime` 小鹤简体默认配置：
   `/home/guo/.config/ibus/rime/double_pinyin_flypy.custom.yaml`
+- `IBus Rime` 候选栏配置：
+  `/home/guo/.config/ibus/rime/ibus_rime.custom.yaml`
 
 ## 补充
 
