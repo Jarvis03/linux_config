@@ -36,7 +36,6 @@ config.status_update_interval = 1000
 
 config.default_prog = { "/usr/bin/zsh", "-l" }
 config.use_ime = true
-config.ime_preedit_rendering = "System"
 
 config.font = wezterm.font_with_fallback({
   "DejaVu Sans Mono",
@@ -49,6 +48,11 @@ config.line_height = 1.1
 config.color_scheme = "Tokyo Night"
 config.window_background_opacity = 1.0
 config.text_background_opacity = 1.0
+config.colors = {
+  foreground = "#f8f8f2",
+  ansi = { "#1e1e2e", "#f8f8f2", "#a6e3a1", "#f9e2af", "#89b4fa", "#cba6f7", "#94e2d5", "#f8f8f2" },
+  brights = { "#585b70", "#ffffff", "#a6e3a1", "#f9e2af", "#89b4fa", "#cba6f7", "#94e2d5", "#ffffff" },
+}
 config.window_decorations = "RESIZE"
 config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 config.integrated_title_button_style = "Gnome"
